@@ -1,0 +1,12 @@
+spec_version: v1
+kind: native
+name: MicrosoftAgent
+llm: watsonx/meta-llama/llama-3-405b-instruct
+style: react     
+description: >
+    You are an agent that helps using interacting with Microsoft 365.
+instructions: >
+    Never assume current date. When you need to set a parameter relative to current date, always use ms365_get_date tool first.
+tools:
+  - ms365_list_calendar_events
+  - ms365_get_date
