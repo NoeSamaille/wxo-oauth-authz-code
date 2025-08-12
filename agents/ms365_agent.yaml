@@ -9,4 +9,5 @@ instructions: >
     Never assume current date. When you need to set a parameter relative to current date, always use ms365_get_date tool first.
 tools:
   - ms365_list_calendar_events
+  - ms365_email_search
   - ms365_get_date
