@@ -28,14 +28,14 @@ Next, you need to configure the connection to Microsoft 365. You can do this by 
 ```sh
 orchestrate connections add -a ms365
 orchestrate connections configure -a ms365 --env draft -t member -k oauth_auth_code_flow
-orchestrate connections set-credentials -a ms365 --env draft --client-id ${CLIENT_ID} --client-secret ${CLIENT_SECRET} --token-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token" --auth-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/authorize" --grant-type authorization_code --scope "https://graph.microsoft.com/user.read https://graph.microsoft.com/calendars.read https://graph.microsoft.com/MailboxFolder.Read https://graph.microsoft.com/Mail.Read"
+orchestrate connections set-credentials -a ms365 --env draft --client-id ${CLIENT_ID} --client-secret ${CLIENT_SECRET} --token-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token" --auth-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/authorize" --grant-type authorization_code --scope "https://graph.microsoft.com/user.read https://graph.microsoft.com/calendars.read https://graph.microsoft.com/MailboxFolder.Read https://graph.microsoft.com/Mail.Read https://graph.microsoft.com/offline_access"
 ```
 
 Repeat the same steps for the `live` environment:
 
 ```sh
 orchestrate connections configure -a ms365 --env live -t member -k oauth_auth_code_flow
-orchestrate connections set-credentials -a ms365 --env live --client-id ${CLIENT_ID} --client-secret ${CLIENT_SECRET} --token-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token" --auth-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/authorize" --grant-type authorization_code --scope "https://graph.microsoft.com/user.read https://graph.microsoft.com/calendars.read https://graph.microsoft.com/MailboxFolder.Read https://graph.microsoft.com/Mail.Read"
+orchestrate connections set-credentials -a ms365 --env live --client-id ${CLIENT_ID} --client-secret ${CLIENT_SECRET} --token-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token" --auth-url "https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/authorize" --grant-type authorization_code --scope "https://graph.microsoft.com/user.read https://graph.microsoft.com/calendars.read https://graph.microsoft.com/MailboxFolder.Read https://graph.microsoft.com/Mail.Read https://graph.microsoft.com/offline_access"
 ```
 
 ## Importing Tools and Agents
