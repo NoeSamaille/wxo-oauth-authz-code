@@ -87,9 +87,11 @@ def email_search(
     params = {
         '$select': 'subject,from,sender,toRecipients,receivedDateTime,isRead,hasAttachments,importance,body',
         '$top': top,
-        '$search': f'"{search}"',
         'mailFolderId': email_folder
     }
+    
+    if search is not None:
+        params["$search"] = f'"{search}"'
     
     # Graph API endpoint for calendar events in the specified range
     url = f"https://graph.microsoft.com/v1.0/me/mailFolders('{email_folder}')/messages"
